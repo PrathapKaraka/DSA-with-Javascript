@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Sidebar } from '@/components/Sidebar';
 import { ContentArea } from '@/components/ContentArea';
-import { SubModule } from '@/data/dsaModules';
+import { SubModule } from '@/types/module';
 
 const Index = () => {
   const [selectedSubModule, setSelectedSubModule] = useState<SubModule | null>(null);

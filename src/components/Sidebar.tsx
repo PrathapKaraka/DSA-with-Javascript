@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { dsaModules, Module, SubModule } from '@/data/dsaModules';
+import { dsaModules, Module, SubModule } from '@/content';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
