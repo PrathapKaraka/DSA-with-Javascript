@@ -1,4 +1,4 @@
-import { SubModule } from '@/data/dsaModules';
+import { SubModule } from '@/types/module';
 import { CodeBlock } from './CodeBlock';
 import { ThemeToggle } from './ThemeToggle';
 import { ScrollArea } from '@/components/ui/scroll-area';
