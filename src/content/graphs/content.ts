@@ -1,4 +1,6 @@
-export const graphBasicsContent = `
+export const graphBasicsSections = [
+  {
+    content: `
 # Introduction to Graphs
 
 A **graph** is a non-linear data structure consisting of **vertices** (nodes) connected by **edges**.
@@ -10,22 +12,30 @@ A **graph** is a non-linear data structure consisting of **vertices** (nodes) co
 - **Degree**: Number of edges connected to a vertex
 - **Path**: Sequence of vertices connected by edges
 - **Cycle**: Path that starts and ends at same vertex
-
-## Types of Graphs
-
+`
+  },
+  {
+    heading: 'Types of Graphs',
+    content: `
 1. **Directed vs Undirected**
 2. **Weighted vs Unweighted**
 3. **Cyclic vs Acyclic**
 4. **Connected vs Disconnected**
-
-## Graph Representations
-
+`
+  },
+  {
+    heading: 'Graph Representations',
+    content: `
 1. **Adjacency Matrix**: 2D array of size V×V
 2. **Adjacency List**: Array of lists
-`;
-
-export const graphBasicsCode = `// Graph using Adjacency List
-class Graph {
+`
+  },
+  {
+    heading: 'Graph Implementation',
+    content: `
+Graph implementation using adjacency list.
+`,
+    codeExample: `class Graph {
   constructor() {
     this.adjacencyList = {};
   }
@@ -57,9 +67,13 @@ g.addVertex('C');
 g.addEdge('A', 'B');
 g.addEdge('B', 'C');
 console.log(g.adjacencyList);
-// { A: ['B'], B: ['A', 'C'], C: ['B'] }`;
+// { A: ['B'], B: ['A', 'C'], C: ['B'] }`
+  }
+];
 
-export const graphTraversalContent = `
+export const graphTraversalSections = [
+  {
+    content: `
 # Graph Traversals
 
 ## Depth-First Search (DFS)
@@ -71,19 +85,14 @@ Explores as far as possible along each branch before backtracking.
 - Cycle detection
 - Topological sorting
 - Connected components
-
-## Breadth-First Search (BFS)
-
-Explores all neighbors at current depth before moving to next level.
-
-**Use Cases:**
-- Shortest path (unweighted)
-- Level order traversal
-- Finding connected components
-`;
-
-export const graphTraversalCode = `// DFS - Recursive
-function dfs(graph, start, visited = new Set()) {
+`
+  },
+  {
+    heading: 'DFS - Recursive',
+    content: `
+The recursive approach is clean and intuitive.
+`,
+    codeExample: `function dfs(graph, start, visited = new Set()) {
   visited.add(start);
   console.log(start);
   
@@ -92,10 +101,14 @@ function dfs(graph, start, visited = new Set()) {
       dfs(graph, neighbor, visited);
     }
   }
-}
-
-// DFS - Iterative with Stack
-function dfsIterative(graph, start) {
+}`
+  },
+  {
+    heading: 'DFS - Iterative with Stack',
+    content: `
+Use an explicit stack for iterative DFS.
+`,
+    codeExample: `function dfsIterative(graph, start) {
   const visited = new Set();
   const stack = [start];
   
@@ -113,10 +126,19 @@ function dfsIterative(graph, start) {
       }
     }
   }
-}
+}`
+  },
+  {
+    heading: 'Breadth-First Search (BFS)',
+    content: `
+Explores all neighbors at current depth before moving to next level.
 
-// BFS
-function bfs(graph, start) {
+**Use Cases:**
+- Shortest path (unweighted)
+- Level order traversal
+- Finding connected components
+`,
+    codeExample: `function bfs(graph, start) {
   const visited = new Set([start]);
   const queue = [start];
   
@@ -131,4 +153,6 @@ function bfs(graph, start) {
       }
     }
   }
-}`;
+}`
+  }
+];

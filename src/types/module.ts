@@ -1,8 +1,13 @@
+export interface ContentSection {
+  heading?: string;
+  content: string;
+  codeExample?: string;
+}
+
 export interface SubModule {
   id: string;
   title: string;
-  content: string;
-  codeExample?: string;
+  sections: ContentSection[];
 }
 
 export interface Module {

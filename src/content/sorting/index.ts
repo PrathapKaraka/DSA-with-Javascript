@@ -1,7 +1,4 @@
-import {
-  sortingOverviewContent,
-  sortingOverviewCode,
-} from './content';
+import { sortingOverviewSections } from './content';
 import { Module } from '@/types/module';
 
 export const sortingModule: Module = {
@@ -12,8 +9,7 @@ export const sortingModule: Module = {
     {
       id: 'sort-comparison',
       title: 'Sorting Overview',
-      content: sortingOverviewContent,
-      codeExample: sortingOverviewCode,
-    },
-  ],
+      sections: sortingOverviewSections
+    }
+  ]
 };
