@@ -1,9 +1,4 @@
-import {
-  graphBasicsContent,
-  graphBasicsCode,
-  graphTraversalContent,
-  graphTraversalCode,
-} from './content';
+import { graphBasicsSections, graphTraversalSections } from './content';
 import { Module } from '@/types/module';
 
 export const graphsModule: Module = {
@@ -14,14 +9,12 @@ export const graphsModule: Module = {
     {
       id: 'graph-intro',
       title: 'Graph Basics',
-      content: graphBasicsContent,
-      codeExample: graphBasicsCode,
+      sections: graphBasicsSections
     },
     {
       id: 'graph-traversal',
       title: 'Graph Traversals',
-      content: graphTraversalContent,
-      codeExample: graphTraversalCode,
-    },
-  ],
+      sections: graphTraversalSections
+    }
+  ]
 };

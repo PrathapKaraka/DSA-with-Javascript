@@ -1,7 +1,4 @@
-import {
-  dpIntroContent,
-  dpIntroCode,
-} from './content';
+import { dpIntroSections } from './content';
 import { Module } from '@/types/module';
 
 export const dynamicProgrammingModule: Module = {
@@ -12,8 +9,7 @@ export const dynamicProgrammingModule: Module = {
     {
       id: 'dp-intro',
       title: 'DP Introduction',
-      content: dpIntroContent,
-      codeExample: dpIntroCode,
-    },
-  ],
+      sections: dpIntroSections
+    }
+  ]
 };

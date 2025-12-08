@@ -1,4 +1,6 @@
-export const stackIntroContent = `
+export const stackIntroSections = [
+  {
+    content: `
 # Introduction to Stacks
 
 A **stack** is a linear data structure that follows the **LIFO** (Last In, First Out) principle.
@@ -9,18 +11,24 @@ A **stack** is a linear data structure that follows the **LIFO** (Last In, First
 - **pop()**: Remove item from top - O(1)
 - **peek()/top()**: View top item - O(1)
 - **isEmpty()**: Check if empty - O(1)
-
-## Real-world Applications
-
+`
+  },
+  {
+    heading: 'Real-world Applications',
+    content: `
 - Browser history (back button)
 - Undo operations in editors
 - Function call stack
 - Expression evaluation
 - Parentheses matching
-`;
-
-export const stackIntroCode = `// Stack implementation using array
-class Stack {
+`
+  },
+  {
+    heading: 'Stack Implementation',
+    content: `
+A simple stack implementation using an array.
+`,
+    codeExample: `class Stack {
   constructor() {
     this.items = [];
   }
@@ -46,10 +54,14 @@ class Stack {
   size() {
     return this.items.length;
   }
-}
-
-// Valid Parentheses problem
-function isValidParentheses(s) {
+}`
+  },
+  {
+    heading: 'Valid Parentheses Problem',
+    content: `
+A classic stack problem - check if brackets are balanced.
+`,
+    codeExample: `function isValidParentheses(s) {
   const stack = new Stack();
   const map = { ')': '(', '}': '{', ']': '[' };
   
@@ -64,9 +76,17 @@ function isValidParentheses(s) {
   }
   
   return stack.isEmpty();
-}`;
+}
 
-export const queueIntroContent = `
+// Examples
+console.log(isValidParentheses("()[]{}"));  // true
+console.log(isValidParentheses("([)]"));    // false`
+  }
+];
+
+export const queueIntroSections = [
+  {
+    content: `
 # Introduction to Queues
 
 A **queue** is a linear data structure that follows the **FIFO** (First In, First Out) principle.
@@ -77,17 +97,23 @@ A **queue** is a linear data structure that follows the **FIFO** (First In, Firs
 - **dequeue()**: Remove item from front - O(1)
 - **front()**: View front item - O(1)
 - **isEmpty()**: Check if empty - O(1)
-
-## Types of Queues
-
+`
+  },
+  {
+    heading: 'Types of Queues',
+    content: `
 1. **Simple Queue**: Basic FIFO
 2. **Circular Queue**: Rear connects to front
 3. **Priority Queue**: Elements have priorities
 4. **Deque**: Double-ended queue
-`;
-
-export const queueIntroCode = `// Queue implementation
-class Queue {
+`
+  },
+  {
+    heading: 'Queue Implementation',
+    content: `
+A simple queue implementation using an array.
+`,
+    codeExample: `class Queue {
   constructor() {
     this.items = [];
   }
@@ -113,10 +139,14 @@ class Queue {
   size() {
     return this.items.length;
   }
-}
-
-// BFS using Queue
-function bfs(graph, start) {
+}`
+  },
+  {
+    heading: 'BFS Using Queue',
+    content: `
+Breadth-First Search uses a queue for level-order traversal.
+`,
+    codeExample: `function bfs(graph, start) {
   const visited = new Set();
   const queue = new Queue();
   
@@ -134,4 +164,6 @@ function bfs(graph, start) {
       }
     }
   }
-}`;
+}`
+  }
+];

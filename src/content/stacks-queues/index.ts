@@ -1,9 +1,4 @@
-import {
-  stackIntroContent,
-  stackIntroCode,
-  queueIntroContent,
-  queueIntroCode,
-} from './content';
+import { stackIntroSections, queueIntroSections } from './content';
 import { Module } from '@/types/module';
 
 export const stacksQueuesModule: Module = {
@@ -14,14 +9,12 @@ export const stacksQueuesModule: Module = {
     {
       id: 'stack-intro',
       title: 'Stack Introduction',
-      content: stackIntroContent,
-      codeExample: stackIntroCode,
+      sections: stackIntroSections
     },
     {
       id: 'queue-intro',
       title: 'Queue Introduction',
-      content: queueIntroContent,
-      codeExample: queueIntroCode,
-    },
-  ],
+      sections: queueIntroSections
+    }
+  ]
 };

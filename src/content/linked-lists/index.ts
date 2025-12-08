@@ -1,9 +1,4 @@
-import {
-  linkedListIntroContent,
-  linkedListIntroCode,
-  linkedListReversalContent,
-  linkedListReversalCode,
-} from './content';
+import { linkedListIntroSections, linkedListReversalSections } from './content';
 import { Module } from '@/types/module';
 
 export const linkedListsModule: Module = {
@@ -14,14 +9,12 @@ export const linkedListsModule: Module = {
     {
       id: 'll-intro',
       title: 'Introduction',
-      content: linkedListIntroContent,
-      codeExample: linkedListIntroCode,
+      sections: linkedListIntroSections
     },
     {
       id: 'll-reversal',
       title: 'Reversing a Linked List',
-      content: linkedListReversalContent,
-      codeExample: linkedListReversalCode,
-    },
-  ],
+      sections: linkedListReversalSections
+    }
+  ]
 };

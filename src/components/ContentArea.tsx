@@ -1,6 +1,6 @@
 import { SubModule } from '@/types/module';
 import { CodeBlock } from './CodeBlock';
-import { ThemeToggle } from './ThemeToggle';
+import { Header } from './Header';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { BookOpen } from 'lucide-react';
 
@@ -11,18 +11,21 @@ interface ContentAreaProps {
 export function ContentArea({ subModule }: ContentAreaProps) {
   if (!subModule) {
     return (
-      <div className="flex-1 flex items-center justify-center bg-background">
-        <div className="text-center max-w-md px-4">
-          <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-primary/10 flex items-center justify-center">
-            <BookOpen className="h-8 w-8 text-primary" />
+      <div className="flex-1 flex flex-col bg-background min-h-screen">
+        <Header />
+        <div className="flex-1 flex items-center justify-center">
+          <div className="text-center max-w-md px-4">
+            <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-primary/10 flex items-center justify-center">
+              <BookOpen className="h-8 w-8 text-primary" />
+            </div>
+            <h2 className="text-2xl font-semibold text-foreground mb-3">
+              Welcome to DSA with JavaScript
+            </h2>
+            <p className="text-muted-foreground">
+              Select a topic from the sidebar to start learning. Each module contains explanations, 
+              time complexity analysis, and practical code examples.
+            </p>
           </div>
-          <h2 className="text-2xl font-semibold text-foreground mb-3">
-            Welcome to DSA with JavaScript
-          </h2>
-          <p className="text-muted-foreground">
-            Select a topic from the sidebar to start learning. Each module contains explanations, 
-            time complexity analysis, and practical code examples.
-          </p>
         </div>
       </div>
     );
@@ -30,32 +33,34 @@ export function ContentArea({ subModule }: ContentAreaProps) {
 
   return (
     <div className="flex-1 flex flex-col bg-background min-h-screen">
-      {/* Header */}
-      <header className="sticky top-0 z-30 flex items-center justify-between px-6 lg:px-8 py-4 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <h1 className="text-lg font-semibold text-foreground pl-10 lg:pl-0">
-          {subModule.title}
-        </h1>
-        <ThemeToggle />
-      </header>
+      <Header title={subModule.title} />
 
       {/* Content */}
       <ScrollArea className="flex-1">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 py-8 animate-fade-in">
-          {/* Markdown content */}
-          <article className="prose prose-slate dark:prose-invert max-w-none mb-8">
-            <MarkdownContent content={subModule.content} />
-          </article>
+          {subModule.sections.map((section, index) => (
+            <section key={index} className="mb-12 last:mb-0">
+              {/* Section heading */}
+              {section.heading && (
+                <h2 className="text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <span className="text-primary">#</span>
+                  {section.heading}
+                </h2>
+              )}
 
-          {/* Code example */}
-          {subModule.codeExample && (
-            <section>
-              <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <span className="text-primary">{'</>'}</span>
-                Code Example
-              </h2>
-              <CodeBlock code={subModule.codeExample} />
+              {/* Markdown content */}
+              <article className="prose prose-slate dark:prose-invert max-w-none mb-6">
+                <MarkdownContent content={section.content} />
+              </article>
+
+              {/* Code example */}
+              {section.codeExample && (
+                <div className="mt-6">
+                  <CodeBlock code={section.codeExample} />
+                </div>
+              )}
             </section>
-          )}
+          ))}
         </div>
       </ScrollArea>
     </div>

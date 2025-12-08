@@ -1,4 +1,6 @@
-export const sortingOverviewContent = `
+export const sortingOverviewSections = [
+  {
+    content: `
 # Sorting Algorithms Overview
 
 ## Comparison of Algorithms
@@ -11,17 +13,23 @@ export const sortingOverviewContent = `
 | Merge Sort | O(n log n) | O(n log n) | O(n log n) | O(n) | Yes |
 | Quick Sort | O(n log n) | O(n log n) | O(n²) | O(log n) | No |
 | Heap Sort | O(n log n) | O(n log n) | O(n log n) | O(1) | No |
-
-## When to Use What?
-
+`
+  },
+  {
+    heading: 'When to Use What?',
+    content: `
 - **Small data**: Insertion Sort
 - **Nearly sorted**: Insertion Sort, Bubble Sort
 - **General purpose**: Merge Sort, Quick Sort
 - **Memory constrained**: Heap Sort, Quick Sort
-`;
-
-export const sortingOverviewCode = `// Quick Sort
-function quickSort(arr, low = 0, high = arr.length - 1) {
+`
+  },
+  {
+    heading: 'Quick Sort',
+    content: `
+Divide and conquer algorithm with average O(n log n) complexity.
+`,
+    codeExample: `function quickSort(arr, low = 0, high = arr.length - 1) {
   if (low < high) {
     const pivotIdx = partition(arr, low, high);
     quickSort(arr, low, pivotIdx - 1);
@@ -45,8 +53,16 @@ function partition(arr, low, high) {
   return i + 1;
 }
 
-// Merge Sort
-function mergeSort(arr) {
+// Example
+const arr = [64, 34, 25, 12, 22, 11, 90];
+console.log(quickSort(arr)); // [11, 12, 22, 25, 34, 64, 90]`
+  },
+  {
+    heading: 'Merge Sort',
+    content: `
+Stable divide and conquer algorithm with guaranteed O(n log n).
+`,
+    codeExample: `function mergeSort(arr) {
   if (arr.length <= 1) return arr;
   
   const mid = Math.floor(arr.length / 2);
@@ -69,4 +85,9 @@ function merge(left, right) {
   }
   
   return [...result, ...left.slice(i), ...right.slice(j)];
-}`;
+}
+
+// Example
+console.log(mergeSort([38, 27, 43, 3, 9, 82, 10]));`
+  }
+];

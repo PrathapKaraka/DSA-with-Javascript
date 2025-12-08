@@ -1,4 +1,6 @@
-export const dpIntroContent = `
+export const dpIntroSections = [
+  {
+    content: `
 # Dynamic Programming
 
 **Dynamic Programming (DP)** is an optimization technique that solves complex problems by breaking them into simpler subproblems.
@@ -7,30 +9,43 @@ export const dpIntroContent = `
 
 1. **Overlapping Subproblems**: Same subproblems solved multiple times
 2. **Optimal Substructure**: Optimal solution contains optimal solutions to subproblems
-
-## Approaches
-
-### Top-Down (Memoization)
+`
+  },
+  {
+    heading: 'Top-Down (Memoization)',
+    content: `
 - Start with the original problem
 - Recursively break down into subproblems
 - Cache results to avoid recomputation
-
-### Bottom-Up (Tabulation)
+`
+  },
+  {
+    heading: 'Bottom-Up (Tabulation)',
+    content: `
 - Start with smallest subproblems
 - Build up to the original problem
 - Typically uses iteration with a table
-`;
-
-export const dpIntroCode = `// Fibonacci - Multiple approaches
-
-// 1. Naive Recursive - O(2^n)
-function fibNaive(n) {
+`
+  },
+  {
+    heading: 'Fibonacci - Naive Recursive',
+    content: `
+The naive approach has exponential time complexity O(2^n).
+`,
+    codeExample: `function fibNaive(n) {
   if (n <= 1) return n;
   return fibNaive(n - 1) + fibNaive(n - 2);
 }
 
-// 2. Memoization (Top-Down) - O(n)
-function fibMemo(n, memo = {}) {
+// Very slow for large n
+console.log(fibNaive(10)); // 55`
+  },
+  {
+    heading: 'Fibonacci - Memoization',
+    content: `
+Top-down approach with caching reduces to O(n).
+`,
+    codeExample: `function fibMemo(n, memo = {}) {
   if (n in memo) return memo[n];
   if (n <= 1) return n;
   
@@ -38,8 +53,14 @@ function fibMemo(n, memo = {}) {
   return memo[n];
 }
 
-// 3. Tabulation (Bottom-Up) - O(n)
-function fibTab(n) {
+console.log(fibMemo(50)); // 12586269025`
+  },
+  {
+    heading: 'Fibonacci - Tabulation',
+    content: `
+Bottom-up approach with iteration.
+`,
+    codeExample: `function fibTab(n) {
   if (n <= 1) return n;
   
   const dp = [0, 1];
@@ -49,8 +70,14 @@ function fibTab(n) {
   return dp[n];
 }
 
-// 4. Space Optimized - O(n) time, O(1) space
-function fibOptimized(n) {
+console.log(fibTab(50)); // 12586269025`
+  },
+  {
+    heading: 'Fibonacci - Space Optimized',
+    content: `
+O(n) time with O(1) space by keeping only last two values.
+`,
+    codeExample: `function fibOptimized(n) {
   if (n <= 1) return n;
   
   let prev2 = 0, prev1 = 1;
@@ -60,4 +87,8 @@ function fibOptimized(n) {
     prev1 = curr;
   }
   return prev1;
-}`;
+}
+
+console.log(fibOptimized(50)); // 12586269025`
+  }
+];
