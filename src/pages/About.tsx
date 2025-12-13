@@ -125,9 +125,17 @@ const About = () => {
             <GraduationCap className="h-5 w-5 text-primary" />
             Education
           </h2>
-          <div className="border border-border rounded-lg p-4 bg-card">
-            <h3 className="text-lg font-semibold text-foreground">Master's Degree – Blockchain Specialization</h3>
-            <p className="text-muted-foreground">Upgrade Online</p>
+          <div className="space-y-4">
+            <div className="border border-border rounded-lg p-4 bg-card">
+              <h3 className="text-lg font-semibold text-foreground">Master's Degree – Blockchain Specialization</h3>
+              <p className="text-primary text-sm mb-1">Joint Program: upGrad × IIIT Bangalore × LJMU</p>
+              <p className="text-muted-foreground text-sm">Liverpool John Moores University (LJMU)</p>
+            </div>
+            <div className="border border-border rounded-lg p-4 bg-card">
+              <h3 className="text-lg font-semibold text-foreground">B.Tech – Metallurgical and Materials Engineering</h3>
+              <p className="text-primary text-sm mb-1">MNIT Jaipur</p>
+              <p className="text-muted-foreground text-sm">Class of 2021</p>
+            </div>
           </div>
         </section>
 
