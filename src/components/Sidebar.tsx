@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react';
+import { ChevronDown, ChevronRight, Menu, X, Home } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { dsaModules, Module, SubModule } from '@/content';
 import { Button } from '@/components/ui/button';
@@ -7,7 +7,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 
 interface SidebarProps {
   selectedSubModule: SubModule | null;
-  onSelectSubModule: (subModule: SubModule) => void;
+  onSelectSubModule: (subModule: SubModule | null) => void;
 }
 
 export function Sidebar({ selectedSubModule, onSelectSubModule }: SidebarProps) {
@@ -31,6 +31,11 @@ export function Sidebar({ selectedSubModule, onSelectSubModule }: SidebarProps) 
     setIsMobileOpen(false);
   };
 
+  const handleGoHome = () => {
+    onSelectSubModule(null);
+    setIsMobileOpen(false);
+  };
+
   const SidebarContent = () => (
     <ScrollArea className="h-full">
       <div className="p-4">
@@ -38,6 +43,20 @@ export function Sidebar({ selectedSubModule, onSelectSubModule }: SidebarProps) 
           <h2 className="text-lg font-semibold text-foreground mb-1">DSA with JavaScript</h2>
           <p className="text-sm text-muted-foreground">Master Data Structures & Algorithms</p>
         </div>
+
+        {/* Home Button */}
+        <button
+          onClick={handleGoHome}
+          className={cn(
+            "flex items-center w-full px-3 py-2 mb-3 text-sm font-medium rounded-lg transition-colors",
+            selectedSubModule === null
+              ? "bg-sidebar-accent text-sidebar-accent-foreground"
+              : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+          )}
+        >
+          <Home className="h-4 w-4 mr-2" />
+          <span>Home</span>
+        </button>
         
         <nav className="space-y-1">
           {dsaModules.map((module) => (
