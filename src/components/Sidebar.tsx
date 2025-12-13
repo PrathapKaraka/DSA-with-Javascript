@@ -1,18 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown, ChevronRight, Menu, X, Home } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { dsaModules, Module, SubModule } from '@/content';
+import { Module, SubModule } from '@/content';
+import { Topic } from '@/content/topics';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 interface SidebarProps {
   selectedSubModule: SubModule | null;
   onSelectSubModule: (subModule: SubModule | null) => void;
+  topic: Topic;
 }
 
-export function Sidebar({ selectedSubModule, onSelectSubModule }: SidebarProps) {
-  const [expandedModules, setExpandedModules] = useState<Set<string>>(new Set(['arrays']));
+export function Sidebar({ selectedSubModule, onSelectSubModule, topic }: SidebarProps) {
+  const [expandedModules, setExpandedModules] = useState<Set<string>>(new Set());
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+
+  // Auto-expand first module when topic changes
+  useEffect(() => {
+    if (topic.modules.length > 0) {
+      setExpandedModules(new Set([topic.modules[0].id]));
+    }
+  }, [topic.id]);
 
   const toggleModule = (moduleId: string) => {
     setExpandedModules(prev => {
@@ -40,8 +49,11 @@ export function Sidebar({ selectedSubModule, onSelectSubModule }: SidebarProps) 
     <ScrollArea className="h-full">
       <div className="p-4">
         <div className="mb-6">
-          <h2 className="text-lg font-semibold text-foreground mb-1">DSA with JavaScript</h2>
-          <p className="text-sm text-muted-foreground">Master Data Structures & Algorithms</p>
+          <h2 className="text-lg font-semibold text-foreground mb-1 flex items-center gap-2">
+            <span>{topic.icon}</span>
+            {topic.title}
+          </h2>
+          <p className="text-sm text-muted-foreground">{topic.description}</p>
         </div>
 
         {/* Home Button */}
@@ -59,7 +71,7 @@ export function Sidebar({ selectedSubModule, onSelectSubModule }: SidebarProps) 
         </button>
         
         <nav className="space-y-1">
-          {dsaModules.map((module) => (
+          {topic.modules.map((module) => (
             <ModuleItem
               key={module.id}
               module={module}
