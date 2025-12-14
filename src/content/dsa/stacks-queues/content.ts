@@ -25,9 +25,7 @@ A **stack** is a linear data structure that follows the **LIFO** (Last In, First
   },
   {
     heading: 'Stack Implementation',
-    content: `
-A simple stack implementation using an array.
-`,
+    content: `A simple stack implementation using an array.`,
     codeExample: `class Stack {
   constructor() {
     this.items = [];
@@ -58,9 +56,7 @@ A simple stack implementation using an array.
   },
   {
     heading: 'Valid Parentheses Problem',
-    content: `
-A classic stack problem - check if brackets are balanced.
-`,
+    content: `A classic stack problem - check if brackets are balanced.`,
     codeExample: `function isValidParentheses(s) {
   const stack = new Stack();
   const map = { ')': '(', '}': '{', ']': '[' };
@@ -79,8 +75,8 @@ A classic stack problem - check if brackets are balanced.
 }
 
 // Examples
-console.log(isValidParentheses("()[]{}"));  // true
-console.log(isValidParentheses("([)]"));    // false`
+console.log(isValidParentheses("()[]{}")); // true
+console.log(isValidParentheses("([)]"));   // false`
   }
 ];
 
@@ -110,9 +106,7 @@ A **queue** is a linear data structure that follows the **FIFO** (First In, Firs
   },
   {
     heading: 'Queue Implementation',
-    content: `
-A simple queue implementation using an array.
-`,
+    content: `A simple queue implementation using an array.`,
     codeExample: `class Queue {
   constructor() {
     this.items = [];
@@ -143,9 +137,7 @@ A simple queue implementation using an array.
   },
   {
     heading: 'BFS Using Queue',
-    content: `
-Breadth-First Search uses a queue for level-order traversal.
-`,
+    content: `Breadth-First Search uses a queue for level-order traversal.`,
     codeExample: `function bfs(graph, start) {
   const visited = new Set();
   const queue = new Queue();

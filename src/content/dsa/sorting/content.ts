@@ -26,9 +26,7 @@ export const sortingOverviewSections = [
   },
   {
     heading: 'Quick Sort',
-    content: `
-Divide and conquer algorithm with average O(n log n) complexity.
-`,
+    content: `Divide and conquer algorithm with average O(n log n) complexity.`,
     codeExample: `function quickSort(arr, low = 0, high = arr.length - 1) {
   if (low < high) {
     const pivotIdx = partition(arr, low, high);
@@ -59,9 +57,7 @@ console.log(quickSort(arr)); // [11, 12, 22, 25, 34, 64, 90]`
   },
   {
     heading: 'Merge Sort',
-    content: `
-Stable divide and conquer algorithm with guaranteed O(n log n).
-`,
+    content: `Stable divide and conquer algorithm with guaranteed O(n log n).`,
     codeExample: `function mergeSort(arr) {
   if (arr.length <= 1) return arr;
   

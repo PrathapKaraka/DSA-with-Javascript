@@ -32,9 +32,7 @@ A **graph** is a non-linear data structure consisting of **vertices** (nodes) co
   },
   {
     heading: 'Graph Implementation',
-    content: `
-Graph implementation using adjacency list.
-`,
+    content: `Graph implementation using adjacency list.`,
     codeExample: `class Graph {
   constructor() {
     this.adjacencyList = {};
@@ -89,9 +87,7 @@ Explores as far as possible along each branch before backtracking.
   },
   {
     heading: 'DFS - Recursive',
-    content: `
-The recursive approach is clean and intuitive.
-`,
+    content: `The recursive approach is clean and intuitive.`,
     codeExample: `function dfs(graph, start, visited = new Set()) {
   visited.add(start);
   console.log(start);
@@ -105,9 +101,7 @@ The recursive approach is clean and intuitive.
   },
   {
     heading: 'DFS - Iterative with Stack',
-    content: `
-Use an explicit stack for iterative DFS.
-`,
+    content: `Use an explicit stack for iterative DFS.`,
     codeExample: `function dfsIterative(graph, start) {
   const visited = new Set();
   const stack = [start];

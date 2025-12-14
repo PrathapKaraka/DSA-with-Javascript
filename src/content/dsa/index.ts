@@ -1,4 +1,3 @@
-// Import all modules from their folders
 import { arraysModule } from './arrays';
 import { linkedListsModule } from './linked-lists';
 import { stacksQueuesModule } from './stacks-queues';
@@ -8,8 +7,6 @@ import { sortingModule } from './sorting';
 import { dynamicProgrammingModule } from './dynamic-programming';
 import { Module } from '@/types/module';
 
-// Export all modules as an array
-// Add new modules here when you create them
 export const dsaModules: Module[] = [
   arraysModule,
   linkedListsModule,
@@ -19,6 +16,3 @@ export const dsaModules: Module[] = [
   sortingModule,
   dynamicProgrammingModule,
 ];
-
-// Re-export types for convenience
-export type { Module, SubModule } from '@/types/module';

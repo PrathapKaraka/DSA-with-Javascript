@@ -1,5 +1,5 @@
 import { Topic } from '@/types/topic';
-import { dsaModules } from './index';
+import { dsaModules } from './dsa';
 import { jsModules } from './javascript';
 import { reactModules } from './react';
 

@@ -29,9 +29,7 @@ export const dpIntroSections = [
   },
   {
     heading: 'Fibonacci - Naive Recursive',
-    content: `
-The naive approach has exponential time complexity O(2^n).
-`,
+    content: `The naive approach has exponential time complexity O(2^n).`,
     codeExample: `function fibNaive(n) {
   if (n <= 1) return n;
   return fibNaive(n - 1) + fibNaive(n - 2);
@@ -42,9 +40,7 @@ console.log(fibNaive(10)); // 55`
   },
   {
     heading: 'Fibonacci - Memoization',
-    content: `
-Top-down approach with caching reduces to O(n).
-`,
+    content: `Top-down approach with caching reduces to O(n).`,
     codeExample: `function fibMemo(n, memo = {}) {
   if (n in memo) return memo[n];
   if (n <= 1) return n;
@@ -57,9 +53,7 @@ console.log(fibMemo(50)); // 12586269025`
   },
   {
     heading: 'Fibonacci - Tabulation',
-    content: `
-Bottom-up approach with iteration.
-`,
+    content: `Bottom-up approach with iteration.`,
     codeExample: `function fibTab(n) {
   if (n <= 1) return n;
   
@@ -74,9 +68,7 @@ console.log(fibTab(50)); // 12586269025`
   },
   {
     heading: 'Fibonacci - Space Optimized',
-    content: `
-O(n) time with O(1) space by keeping only last two values.
-`,
+    content: `O(n) time with O(1) space by keeping only last two values.`,
     codeExample: `function fibOptimized(n) {
   if (n <= 1) return n;
   
