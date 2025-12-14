@@ -24,9 +24,7 @@ A **binary tree** is a hierarchical data structure where each node has at most t
   },
   {
     heading: 'Tree Node Implementation',
-    content: `
-The basic building block of a binary tree.
-`,
+    content: `The basic building block of a binary tree.`,
     codeExample: `class TreeNode {
   constructor(val) {
     this.val = val;
@@ -37,9 +35,7 @@ The basic building block of a binary tree.
   },
   {
     heading: 'Tree Traversals',
-    content: `
-Three main ways to traverse a binary tree.
-`,
+    content: `Three main ways to traverse a binary tree.`,
     codeExample: `// Inorder: Left -> Root -> Right
 function inorder(root, result = []) {
   if (root) {
@@ -101,9 +97,7 @@ To avoid worst-case O(n) performance:
   },
   {
     heading: 'BST Implementation',
-    content: `
-A complete BST with insert and search operations.
-`,
+    content: `A complete BST with insert and search operations.`,
     codeExample: `class BST {
   constructor() {
     this.root = null;

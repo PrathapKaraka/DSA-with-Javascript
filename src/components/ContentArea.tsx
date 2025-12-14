@@ -1,6 +1,5 @@
 import { SubModule } from '@/types/module';
 import { CodeBlock } from './CodeBlock';
-import { Header } from './Header';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { BookOpen } from 'lucide-react';
 
@@ -11,8 +10,7 @@ interface ContentAreaProps {
 export function ContentArea({ subModule }: ContentAreaProps) {
   if (!subModule) {
     return (
-      <div className="flex-1 flex flex-col bg-background min-h-screen">
-        <Header />
+      <div className="flex-1 flex flex-col bg-background">
         <div className="flex-1 flex items-center justify-center">
           <div className="text-center max-w-md px-4">
             <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-primary/10 flex items-center justify-center">
@@ -32,8 +30,7 @@ export function ContentArea({ subModule }: ContentAreaProps) {
   }
 
   return (
-    <div className="flex-1 flex flex-col bg-background min-h-screen">
-      <Header title={subModule.title} />
+    <div className="flex-1 flex flex-col bg-background">
 
       {/* Content */}
       <ScrollArea className="flex-1">

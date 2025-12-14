@@ -1,5 +1,5 @@
-import { dpIntroSections } from './content';
 import { Module } from '@/types/module';
+import { dpIntroSections } from './content';
 
 export const dynamicProgrammingModule: Module = {
   id: 'dynamic-programming',
@@ -8,8 +8,8 @@ export const dynamicProgrammingModule: Module = {
   subModules: [
     {
       id: 'dp-intro',
-      title: 'DP Introduction',
-      sections: dpIntroSections
-    }
-  ]
+      title: 'Introduction to DP',
+      sections: dpIntroSections,
+    },
+  ],
 };

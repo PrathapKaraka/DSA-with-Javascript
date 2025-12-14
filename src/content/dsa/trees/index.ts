@@ -1,5 +1,5 @@
-import { binaryTreeSections, bstSections } from './content';
 import { Module } from '@/types/module';
+import { binaryTreeSections, bstSections } from './content';
 
 export const treesModule: Module = {
   id: 'trees',
@@ -7,14 +7,14 @@ export const treesModule: Module = {
   icon: '🌳',
   subModules: [
     {
-      id: 'tree-intro',
+      id: 'binary-trees',
       title: 'Binary Trees',
-      sections: binaryTreeSections
+      sections: binaryTreeSections,
     },
     {
       id: 'bst',
       title: 'Binary Search Trees',
-      sections: bstSections
-    }
-  ]
+      sections: bstSections,
+    },
+  ],
 };
