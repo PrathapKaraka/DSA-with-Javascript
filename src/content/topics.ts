@@ -1,6 +1,6 @@
 import { Topic } from '@/types/topic';
 import { dsaModules } from './dsa';
-import { jsModules } from './javascript';
+import { javascriptModules } from './javascript';
 import { reactModules } from './react';
 
 export const topics: Topic[] = [
@@ -16,7 +16,7 @@ export const topics: Topic[] = [
     title: 'JavaScript',
     icon: '📜',
     description: 'JavaScript Fundamentals',
-    modules: jsModules,
+    modules: javascriptModules,
   },
   {
     id: 'react',
